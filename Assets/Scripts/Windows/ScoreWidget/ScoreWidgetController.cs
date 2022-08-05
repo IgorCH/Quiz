@@ -2,18 +2,17 @@
 using Managers;
 using ResourceManager;
 using Scripts.MVC;
-using UnityEngine;
 
-namespace Windows.PointsWidget
+namespace Windows.ScoreWidget
 {
-    public class PointsWidgetController : BaseWindowController<PointsWidgetView, PointsWidgetModel>
+    public class ScoreWidgetController : BaseWindowController<ScoreWidgetView, ScoreWidgetModel>
     {
         public override WindowTypes Type => WindowTypes.Widget;
         public override string WindowName => WidgetNames.Points;
-        public override string Resource => ResourceNames.PointsWidgetResource;
+        public override string Resource => ResourceNames.ScoreWidgetResource;
 
         private UserState _state;
-        public PointsWidgetController(UserState state) : base()
+        public ScoreWidgetController(UserState state) : base()
         {
             _state = state;
             _state.OnScoreChange += OnScoreChanged;
@@ -21,7 +20,7 @@ namespace Windows.PointsWidget
         
         public override void OnViewAdded()
         {
-            View.Score.text = $"{_state.Score}";
+            View.Text.text = $"{_state.Score}";
         }
 
         public override void OnViewRemoved()
@@ -50,7 +49,7 @@ namespace Windows.PointsWidget
         {
             if (View != null)
             {
-                View.Score.text = $"{score}";
+                View.Text.text = $"{score}";
             }
         }
 

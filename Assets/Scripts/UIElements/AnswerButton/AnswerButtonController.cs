@@ -25,6 +25,7 @@ namespace UIElements.AnswerButton
 
         public override void OnAfterModelChanged()
         {
+            View.SetDefaultBackgroundInstantly();
             View.Text.text = Model.Answer.text;
         }
 
@@ -36,11 +37,19 @@ namespace UIElements.AnswerButton
         private void OnTrigger()
         {
             if (Model.Answer.isRight)
-            {
-                // Подсвечиваем кнопку
+            {    
+                View.SetSuccessBackground(() =>
+                {
+                    OnSelect?.Invoke(Model.Answer.isRight);  
+                });
             }
-
-            OnSelect?.Invoke(Model.Answer.isRight);
+            else
+            {
+                View.SetFailedBackground(() =>
+                {
+                    OnSelect?.Invoke(Model.Answer.isRight);  
+                }); 
+            }
         }
     }
 }

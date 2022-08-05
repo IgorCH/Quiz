@@ -72,11 +72,8 @@ namespace Windows.Question
         }
 
         private void OnSelectAnswer(bool isRight)
-        {
-            if (isRight)
-            {
-                _state.PassQuestion(Model.Question.id);
-            }
+        { 
+            _state.PassQuestion(Model.Question.id, isRight);
 
             // Начисляем звезды
             _windowManager.Show(WindowNames.Main);

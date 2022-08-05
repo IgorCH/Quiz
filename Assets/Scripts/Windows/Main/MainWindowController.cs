@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Windows.Question;
 using BaseClasses;
 using Managers;
@@ -19,6 +20,7 @@ namespace Windows.Main
         private UserState _state;
         
         private List<QuestionIconController> _icons = new List<QuestionIconController>();
+        private List<int> _availableQuestions;
         
         public MainWindowController(IDataSource dataSource, UserState state, IWindowManager windowManager) : base()
         {
@@ -33,6 +35,8 @@ namespace Windows.Main
             {
                 QuestionIconController newIcon = new QuestionIconController(view);
                 newIcon.OnSelect = OnSelectQuestion;
+                QuestionIconModel model = new QuestionIconModel(_dataSource.GetQuestion(view.QuestionID));
+                newIcon.SetModel(model);
                 _icons.Add(newIcon);
             }
         }
@@ -44,20 +48,47 @@ namespace Windows.Main
 
         public override void OnAfterModelChanged()
         {
-            if (Model == null)
-            {
-                return;
-            }
+
         }
         
         public override void Show()
         {
             base.Show();
+
+            _availableQuestions = new List<int>();
+            for (int j = 0; j < _dataSource.Questions.Count; j++)
+            {
+                if (_state.PassedSteps.Contains(_dataSource.Questions[j].prevId))
+                {
+                    _availableQuestions.Add(j);
+                }
+            }
+            
+            foreach (QuestionIconController icon in _icons)
+            {
+                if (_state.PassedSteps.Contains(icon.Model.Question.id))
+                {
+                    // Анимация пройденной иконки
+                    icon.Fade();
+                    icon.IsEnabled = false;
+                } 
+                else if (_availableQuestions.Contains(icon.Model.Question.id))
+                {
+                    icon.Highlight();
+                    icon.IsEnabled = true;
+                }
+                else
+                {
+                    // Обычная иконка
+                    icon.DefaultView();
+                    icon.IsEnabled = false;
+                }
+            }
             
             if (_state.UIProgress < _state.PassedSteps.Count)
             {
                 // Есть не проанимированные шаги
-                
+                _state.UpdateUIProgress();
             }
             else
             {
@@ -73,6 +104,11 @@ namespace Windows.Main
 
         private void OnSelectQuestion(int index)
         {
+            if (_state.PassedSteps.Contains(index))
+            {
+                return;
+            }
+
             Managers.Question question = _dataSource.GetQuestion(index);
             QuestionWindowModel model = new QuestionWindowModel(question);
             _windowManager.Show(WindowNames.Question, model);

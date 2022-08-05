@@ -20,7 +20,8 @@ namespace Managers
         public UserState()
         {
             Score = 0;
-            UIProgress = 0;
+            _passedSteps.Add(0);
+            UIProgress = _passedSteps.Count;
         }
 
         public void UpdateUIProgress()
@@ -28,11 +29,16 @@ namespace Managers
             UIProgress = _passedSteps.Count;
         }
 
-        public void PassQuestion(int index)
+        public void PassQuestion(int index, bool isRight)
         {
             if (!_passedSteps.Contains(index))
             {
-                Score++;
+                _passedSteps.Add(index);
+                
+                if (isRight)
+                {
+                    Score++;
+                }
                 OnScoreChange?.Invoke(Score);
             }
         }

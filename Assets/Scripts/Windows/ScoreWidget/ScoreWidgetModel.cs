@@ -1,14 +1,14 @@
 ﻿using System;
 using BaseClasses;
 
-namespace Windows.PointsWidget
+namespace Windows.ScoreWidget
 { 
-    public class PointsWidgetModel: BaseWindowModel
+    public class ScoreWidgetModel: BaseWindowModel
     {
         public Action OnSuccess;
         public Action OnInterrupted;
         
-        public PointsWidgetModel()
+        public ScoreWidgetModel()
         {
 
         }

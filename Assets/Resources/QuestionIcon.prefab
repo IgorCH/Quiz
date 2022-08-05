@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -331,5 +331,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Transform: {fileID: 7576704224335244715}
+  CategorySprites:
+  - {fileID: 21300000, guid: 4bb97229dde937843973db9333946c19, type: 3}
+  - {fileID: 21300000, guid: 6a6d25f33cf5fa64f8bd5cf1432c9495, type: 3}
+  - {fileID: 21300000, guid: dec79bfe20a9d4c448b8f19f2ad8d04b, type: 3}
+  - {fileID: 21300000, guid: 84fe690c25560fe4ca22b9d23e73a903, type: 3}
+  - {fileID: 21300000, guid: 3d115ebaa14d3ba4fa34866a93794de9, type: 3}
+  Category: {fileID: 6132196489250621130}
   QuestionID: 0
-  Trigger: {fileID: 0}
+  Trigger: {fileID: 6737852581707736268}

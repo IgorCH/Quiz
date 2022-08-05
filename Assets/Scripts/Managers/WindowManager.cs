@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Windows.Main;
-using Windows.PointsWidget;
 using Windows.Question;
+using Windows.ScoreWidget;
 using BaseClasses;
 using Installer;
 using ResourceManagement;
@@ -53,9 +53,9 @@ namespace Managers
             questionWindowController.Hide();
             _windows.Add(questionWindowController);
                  
-             PointsWidgetController pointsWidgetController = new PointsWidgetController(_state);
-             pointsWidgetController.Init(_resourceManager.Instantiate(_widgetsRoot, pointsWidgetController.Resource));
-             _widgets.Add(pointsWidgetController);
+             ScoreWidgetController scoreWidgetController = new ScoreWidgetController(_state);
+             scoreWidgetController.Init(_resourceManager.Instantiate(_widgetsRoot, scoreWidgetController.Resource));
+             _widgets.Add(scoreWidgetController);
         }
         
         public void Show(string windowName, BaseWindowModel model)

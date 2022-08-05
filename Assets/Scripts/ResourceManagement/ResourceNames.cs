@@ -5,7 +5,7 @@ namespace ResourceManager
         public static string MainWindow = "MainWindow";
         public static string QuestionWindow = "QuestionWindow";
         
-        public static string PointsWidgetResource = "PointsWidget";
+        public static string ScoreWidgetResource = "ScoreWidget";
 
         public static string QuestionIcon = "QuestionIcon";
         public static string AnswerButton = "AnswerButton";

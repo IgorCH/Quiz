@@ -9,7 +9,9 @@ namespace UIElements.QuestionIcon
         public override string Resource => ResourceNames.QuestionIcon;
 
         public Action<int> OnSelect;
-    
+
+        public bool IsEnabled;
+        
         public QuestionIconController(QuestionIconView view) : base(view)
         {
         }
@@ -26,7 +28,8 @@ namespace UIElements.QuestionIcon
 
         public override void OnAfterModelChanged()
         {
-            // do nothing
+            int categoryIndex = (int) Model.Question.category;
+            View.Category.sprite = View.CategorySprites[categoryIndex];
         }
 
         public override void OnBeforeModelChanged()
@@ -34,8 +37,28 @@ namespace UIElements.QuestionIcon
             // do nothing
         }
 
+        public void Highlight()
+        {
+            View.Highlight();
+        }
+
+        public void Fade()
+        {
+            View.Fade();
+        }
+
+        public void DefaultView()
+        {
+            View.DefaultView();
+        }
+
         private void OnTrigger()
         {
+            if (!IsEnabled)
+            {
+                return;
+            }
+
             OnSelect?.Invoke(View.QuestionID);
         }
     }

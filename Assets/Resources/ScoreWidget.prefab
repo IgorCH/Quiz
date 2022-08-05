@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -7898362714302002658}
   - component: {fileID: -8606667942890013933}
   m_Layer: 5
-  m_Name: PointsWidget
+  m_Name: ScoreWidget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Transform: {fileID: 3824623606545495212}
   CanvasGroup: {fileID: -8606667942890013933}
-  Score: {fileID: 2309686144617101343}
+  Text: {fileID: 2309686144617101343}
 --- !u!225 &-8606667942890013933
 CanvasGroup:
   m_ObjectHideFlags: 0
