@@ -10,9 +10,6 @@ namespace Managers
         // Счет игрока
         public int Score { get; private set; }
         
-        // Последний показвнный на UI progress, требуется для анимаций. 
-        public int UIProgress { get; private set; }
-        
         public event Action<int> OnScoreChange;
 
         public List<int> PassedSteps => _passedSteps;
@@ -21,12 +18,6 @@ namespace Managers
         {
             Score = 0;
             _passedSteps.Add(0);
-            UIProgress = _passedSteps.Count;
-        }
-
-        public void UpdateUIProgress()
-        {
-            UIProgress = _passedSteps.Count;
         }
 
         public void PassQuestion(int index, bool isRight)

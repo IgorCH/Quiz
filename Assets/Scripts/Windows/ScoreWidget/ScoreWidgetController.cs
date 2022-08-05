@@ -25,19 +25,12 @@ namespace Windows.ScoreWidget
 
         public override void OnViewRemoved()
         {
+            // Do nothing
         }
 
         public override void OnAfterModelChanged()
         {
-            if (Model == null)
-            {
-                return;
-            }
-        }
-        
-        public override void Show()
-        {
-            base.Show();
+            // Do nothing
         }
 
         public override void OnBeforeModelChanged()

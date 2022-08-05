@@ -1,7 +1,6 @@
 ﻿using System;
 using Managers;
 using ResourceManagement;
-using ResourceManager;
 using Scripts.MVC;
 using UnityEngine;
 using Zenject;

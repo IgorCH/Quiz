@@ -4,6 +4,5 @@ namespace BaseClasses
 {
     public abstract class BaseWindowModel: BaseModel
     {
-        public Action OnComplete;
     }
 }

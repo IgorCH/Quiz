@@ -74,6 +74,7 @@ namespace Windows.Main
                 } 
                 else if (_availableQuestions.Contains(icon.Model.Question.id))
                 {
+                    // Анимация доступной иконки
                     icon.Highlight();
                     icon.IsEnabled = true;
                 }
@@ -83,17 +84,6 @@ namespace Windows.Main
                     icon.DefaultView();
                     icon.IsEnabled = false;
                 }
-            }
-            
-            if (_state.UIProgress < _state.PassedSteps.Count)
-            {
-                // Есть не проанимированные шаги
-                _state.UpdateUIProgress();
-            }
-            else
-            {
-                // Все шаги мы уже видели, просто отображаем ситуацию
-                
             }
         }
 

@@ -5,7 +5,6 @@ using ResourceManagement;
 using ResourceManager;
 using Scripts.MVC;
 using UIElements.AnswerButton;
-using UnityEngine;
 
 namespace Windows.Question
 {
@@ -45,10 +44,7 @@ namespace Windows.Question
 
         public override void OnAfterModelChanged()
         {
-            if (Model == null)
-            {
-                return;
-            }
+
         }
         
         public override void Show()
