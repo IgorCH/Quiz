@@ -48,7 +48,7 @@ namespace Managers
             mainWindowController.Hide();
             _windows.Add(mainWindowController);
                  
-            QuestionWindowController questionWindowController = new QuestionWindowController(this, _resourceManager);
+            QuestionWindowController questionWindowController = new QuestionWindowController(this, _resourceManager, _state);
             questionWindowController.Init(_resourceManager.Instantiate(_windowsRoot, questionWindowController.Resource));
             questionWindowController.Hide();
             _windows.Add(questionWindowController);
