@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ui_atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 2d6b60dfae8b08a4eb0a316e4314345f, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c431ef1155a719a4d868c999d6a77493, type: 3}
+  - {fileID: 21300000, guid: 6a6d25f33cf5fa64f8bd5cf1432c9495, type: 3}
+  - {fileID: 21300000, guid: 53a4d405a1219a14a90aa922017235ff, type: 3}
+  - {fileID: 21300000, guid: b511cfa552a20454ea61c55d6e9bfae6, type: 3}
+  - {fileID: 21300000, guid: 93c8fa279ab0bcb43b25a6cdbe1a2266, type: 3}
+  - {fileID: 21300000, guid: 4bb97229dde937843973db9333946c19, type: 3}
+  - {fileID: 21300000, guid: 3d115ebaa14d3ba4fa34866a93794de9, type: 3}
+  - {fileID: 21300000, guid: b1582d3b8c7daab4b86d0ffef6cc880b, type: 3}
+  - {fileID: 21300000, guid: 84fe690c25560fe4ca22b9d23e73a903, type: 3}
+  - {fileID: 21300000, guid: dec79bfe20a9d4c448b8f19f2ad8d04b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - answered_tile
+  - earth
+  - score_bg
+  - tile
+  - answer
+  - culture
+  - sport
+  - star
+  - nature
+  - history
+  m_RenderDataMap: {}
+  m_Tag: ui_atlas
+  m_IsVariant: 0
